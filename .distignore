@@ -3,7 +3,7 @@
 .DS_Store
 # Ignore VIM droppings
 *.swp
-# Other files to not include in final ZIP file
+# Other files to not include in final ZIP file or WordPress SVN repo
 /.distignore
 /.git*
 /.markdownlint.json

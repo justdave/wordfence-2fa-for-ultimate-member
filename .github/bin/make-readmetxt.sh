@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Copyright (C) 2026 David D. Miller
+# Copyright (C) 2026 Justdave IT Consulting LLC
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -39,11 +39,6 @@ done
 if [ -z "${PLUGIN_FILE}" ]; then
     echo "Unable to locate main plugin file (no Plugin Name header found in root PHP files)." >&2
     exit 1
-fi
-
-# make assets directory visible
-if [ -d ".wordpress-org" ]; then
-    cp -r .wordpress-org/ assets
 fi
 
 # parse the main plugin file for metadata
