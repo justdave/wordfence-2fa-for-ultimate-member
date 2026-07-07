@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout source
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
     - name: Get Version Number
-      uses: WyriHaximus/github-action-get-previous-tag@v1
+      uses: WyriHaximus/github-action-get-previous-tag@v2
       id: lasttag
     - name: Create generated assets and Zip file
       run: /bin/bash ${PWD}/.github/bin/build-package.sh "${{ steps.lasttag.outputs.tag }}"
