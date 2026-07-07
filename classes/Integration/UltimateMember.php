@@ -2,7 +2,9 @@
 
 namespace JDITC\Wordfence_2FA_for_Ultimate_Member\Integration;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 class UltimateMember {
 	/**
@@ -56,7 +58,11 @@ class UltimateMember {
 		$remember_selected = ! empty( $_REQUEST['wfls-remember-device'] );
 		$disabled_attr     = $show_immediately ? '' : 'disabled';
 		?>
-		<div id="<?php echo esc_attr( $container_id ); ?>" class="um-field" data-key="wfls-token" <?php if ( ! $show_immediately ) : ?>style="display:none;"<?php endif; ?>>
+		<div id="<?php echo esc_attr( $container_id ); ?>" class="um-field" data-key="wfls-token" 
+		<?php
+		if ( ! $show_immediately ) :
+			?>
+			style="display:none;"<?php endif; ?>>
 			<div class="um-field-label">
 				<label for="<?php echo esc_attr( $field_id ); ?>">
 					<?php esc_html_e( 'Wordfence 2FA Code', 'wordfence-2fa-for-ultimate-member' ); ?>

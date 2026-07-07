@@ -30,7 +30,9 @@
 
 namespace JDITC;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 final class Wordfence_2FA_for_Ultimate_Member {
 	public function __construct() {
