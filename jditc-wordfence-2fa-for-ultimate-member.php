@@ -38,6 +38,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Add plugin meta links on the Installed Plugins page.
+ *
+ * @param string[] $plugin_meta Existing plugin meta links.
+ * @param string   $plugin_file Relative path to the plugin entry file.
+ * @return string[]
+ */
+function add_plugin_meta_links( $plugin_meta, $plugin_file ) {
+	if ( plugin_basename( __FILE__ ) !== $plugin_file ) {
+		return $plugin_meta;
+	}
+
+	$plugin_meta[] = sprintf(
+		'<a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a>',
+		esc_url( 'https://github.com/justdave/jditc-wordfence-2fa-for-ultimate-member/issues' ),
+		esc_html__( 'Bug Reports & Feature Requests', 'jditc-wordfence-2fa-for-ultimate-member' )
+	);
+
+	return $plugin_meta;
+}
+
+add_filter( 'plugin_row_meta', __NAMESPACE__ . '\\add_plugin_meta_links', 10, 2 );
+
 require_once __DIR__ . '/classes/class-ultimatemember.php';
 
 new Wordfence_2FA_for_Ultimate_Member\UltimateMember();
