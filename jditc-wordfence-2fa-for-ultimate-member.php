@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Wordfence 2FA for Ultimate Member
+ * Plugin Name: JDITC Wordfence 2FA for Ultimate Member
  * Description: Adds Wordfence 2FA compatibility to Ultimate Member login forms.
  * Version: 0.1.0
  * Author: David D. Miller
