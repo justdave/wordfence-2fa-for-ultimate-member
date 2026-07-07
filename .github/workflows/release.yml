@@ -12,21 +12,13 @@ jobs:
     - name: Get Version Number
       uses: WyriHaximus/github-action-get-previous-tag@v1
       id: lasttag
-    - name: Generate wordpress.org assets
-      run: /bin/bash ${PWD}/.github/bin/make-readmetxt.sh
     #- name: Post to WordPress.org Plugin Directory
     #  uses: 10up/action-wordpress-plugin-deploy@stable
     #  env:
     #    SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
     #    SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
     - name: Create Zip file
-      uses: thedoctor0/zip-release@master
-      with:
-        type: 'zip'
-        filename: "wordfence-2fa-for-ultimate-member-${{ steps.lasttag.outputs.tag }}.zip"
-        exclusions: '*nondist *DOCKER_ENV *docker_tag *output.log *.git* *.distignore *.wordpress-org *.markdownlint.json'
-        directory: '..'
-        path: 'wordfence-2fa-for-ultimate-member'
+      run: /bin/bash ${PWD}/.github/bin/build-package.sh "${{ steps.lasttag.outputs.tag }}"
     - name: Post to GitHub Release
       uses: ncipollo/release-action@v1
       with:
