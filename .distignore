@@ -4,16 +4,17 @@
 # Ignore VIM droppings
 *.swp
 # Other files to not include in final ZIP file
-/nondist
-/DOCKER_ENV
-/docker_tag
-/output.log
-/.git*
 /.distignore
+/.git*
 /.markdownlint.json
-/.wordpress-org
 /.vscode
-/vendor
+/.wordpress-org
+/CHANGES.md
+/DOCKER_ENV
 /composer.json
 /composer.lock
+/docker_tag
+/nondist
+/output.log
 /phpcs.xml.dist
+/vendor
