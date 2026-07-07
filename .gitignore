@@ -1,0 +1,10 @@
+# Ignore Mac Finder droppings
+.DS_Store
+# Ignore VIM droppings
+*.swp
+# Generated release artifacts
+/assets
+/readme.txt
+# Other files not meant for the plugin package
+/.markdownlint.json
+/.vscode

@@ -1,0 +1,3 @@
+== Screenshots ==
+1. Ultimate Member login form before 2FA prompt is needed
+2. Wordfence 2FA prompt inside an Ultimate Member login form
