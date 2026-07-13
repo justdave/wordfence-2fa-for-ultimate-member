@@ -1,4 +1,4 @@
-#### Unreleased changes
+#### 1.0.2 / 2026-07-13
 
 * Update release process to push to WordPress Plugin Directory.
 
